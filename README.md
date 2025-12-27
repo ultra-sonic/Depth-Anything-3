@@ -92,11 +92,12 @@ conda activate da3
 choose CUDA or slow CPU inference
 CUDA:
 ```bash
-pip install xformers torch\>=2 torchvision --index-url https://download.pytorch.org/whl/cu128```
+pip install xformers torch\>=2 torchvision --index-url https://download.pytorch.org/whl/cu128
 ```
 or for CPU inference:
 ```
 pip install xformers torch\>=2 torchvision
+pip install -e . # Basic install
 ```
 
 NOTE: You do NOT need gsplat to output gaussian splats! This is purely for visualization!
@@ -111,7 +112,6 @@ sudo apt-get -y install cuda-toolkit-12-8
 
 Alternatively you could do:
 ```
-pip install -e . # Basic install
 pip install -e ".[app]" # Gradio web-interface, python>=3.10
 pip install -e ".[all]" # ALL
 ```
