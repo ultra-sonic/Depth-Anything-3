@@ -97,7 +97,6 @@ pip install xformers torch\>=2 torchvision --index-url https://download.pytorch.
 or for CPU inference:
 ```
 pip install xformers torch\>=2 torchvision
-pip install -e . # Basic install
 ```
 
 NOTE: You do NOT need gsplat to output gaussian splats! This is purely for visualization!
@@ -108,6 +107,11 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
+```
+
+Finally do:
+```bash
+pip install -e . # Basic install
 ```
 
 Alternatively you could do:
