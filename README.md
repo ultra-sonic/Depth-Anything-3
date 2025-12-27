@@ -86,10 +86,33 @@ We introduce a new benchmark to rigorously evaluate geometry prediction models o
 ### 📦 Installation
 
 ```bash
+conda create -n da3 python=3.13
+conda activate da3
+```
+choose CUDA or slow CPU inference
+CUDA:
+```
+pip install xformers torch\>=2 torchvision --index-url https://download.pytorch.org/whl/cu128```
+or
+CPU inference:
+```
 pip install xformers torch\>=2 torchvision
-pip install -e . # Basic
+```
+
+NOTE: You do not need gsplat to output gaussian splats! This is purely for visiualization!
+To render using gsplat you also need to install the CUDA toolkit.
+```
 pip install --no-build-isolation git+https://github.com/nerfstudio-project/gsplat.git@0b4dddf04cb687367602c01196913cde6a743d70 # for gaussian head
-pip install -e ".[app]" # Gradio, python>=3.10
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-8
+```
+
+Alternatively you could do:
+```
+pip install -e . # Basic install
+pip install -e ".[app]" # Gradio web-interface, python>=3.10
 pip install -e ".[all]" # ALL
 ```
 
